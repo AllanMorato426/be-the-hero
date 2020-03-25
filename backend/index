@@ -1,0 +1,73 @@
+const express = require('express');
+/*Importa para dentro de const express
+as funcionalidades do módulo Express.
+
+const nome = require('MóduloqueDesejaImportar');
+*/
+
+const app = express();
+/* Armazena a aplicação; instanceia a aplicação.
+É ela que terá as rotas...
+*/
+
+app.use(express.json());
+//Indica para o express que utilizaremos o json na nossa aplpicação
+//Antes de todas as requisições, o express irá transformar o json em
+//algo entendível pela aplicação
+
+app.post('/users', (request, response) => {
+    /*
+    const params = request.query;
+        Armazena na constante params os parâmetros
+        que vem no requisição
+    */
+    /*
+    const param = request.params;
+
+    */
+   const bodny = request.body;
+    console.log(body);
+
+    return response.json({
+        evento: 'Semana OmniStack 11.0',
+        aluno: "Allan"
+    });
+});
+/*
+Usado para indicar uma rota
+app.get('/nomeRota', ...)
+app.get('/', ...) -> Rota principal(página inicial), rota raiz
+*/
+
+/*
+app.get(..., função com 2 parametros: request, reponse)
+app.get(..., (request, reponse) => {
+    return reponse.send("");
+    //retorna uma resposta
+    return reponse.json({});
+
+})
+*/
+
+app.listen(3333);
+/* a aplicação deve ouvir a porta 3333
+Servidor que será usado para abrir a aplicação;
+localhost/3333;
+*/
+
+---------------------------------
+---------------------------------
+
+app.get('#', (request, response) =>{
+    return response.json({
+        evento: 'Semana OmniStack 11.0',
+        aluno: "Allan"
+    });
+});
+
+# Recurso 
+    O que vem depois da barra;
+    "Eu estou querendo acessar o recurso de usuários"
+    Esta relacionado com uma tabela do Banco ou a alguma entidade
+    O que queremos buscar
+Rota é o pacote completo /#
